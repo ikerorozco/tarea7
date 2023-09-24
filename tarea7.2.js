@@ -1,22 +1,15 @@
-function fibonacci(n) {
-    if (n <= 0) return 0;
-    if (n === 1) return 1;
-  
-    let a = 0;
-    let b = 1;
-    let resultado = 0;
-  
-    for (let i = 2; i <= n; i++) {
-      resultado = a + b;
-      a = b;
-      b = resultado;
-    }
-  
-    return resultado;
+function fibonacci(posicion) {
+  if (posicion === 0) {
+    return 0;
+  } else if (posicion === 1) {
+    return 1;
+  } else {
+    return fibonacci(posicion - 1) + fibonacci(posicion - 2);
   }
-  
-  // Ejemplo de uso
-  const numero = 10; // Cambia esto al número deseado
-  const resultado = fibonacci(numero);
-  console.log(`El resultado de Fibonacci para n=${numero} es ${resultado}`);
+}
+
+
+const posicion = 15; 
+const resultado = fibonacci(posicion);
+console.log(`El valor en la posición ${posicion} de la serie de Fibonacci es ${resultado}`);
   
